@@ -7,132 +7,597 @@
     <title>Abhishek Ojha - Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">AbhiTech</div>
-
+  <body data-theme="blue" data-mode="dark" data-bg="default">
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">AO</div>
         <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
-        </ul>
+          <li class="theme-controls">
+            <button
+              class="mode-toggle"
+              id="modeToggle"
+              title="Toggle dark/light mode"
+            >
+              <span id="modeIcon">🌙</span>
+            </button>
+            <div class="theme-switcher">
+              <button class="theme-btn" id="themeBtn">🎨 Customize</button>
+              <div class="theme-dropdown" id="themeDropdown">
+                <div class="theme-section">
+                  <div class="theme-section-title">Color Theme</div>
+                  <div class="theme-options">
+                    <div
+                      class="theme-option active"
+                      data-theme="blue"
+                      style="background: #3b82f6"
+                      title="Blue"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="purple"
+                      style="background: #a855f7"
+                      title="Purple"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="green"
+                      style="background: #10b981"
+                      title="Green"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="orange"
+                      style="background: #f97316"
+                      title="Orange"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="red"
+                      style="background: #ef4444"
+                      title="Red"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="cyan"
+                      style="background: #06b6d4"
+                      title="Cyan"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="pink"
+                      style="background: #ec4899"
+                      title="Pink"
+                    ></div>
+                    <div
+                      class="theme-option"
+                      data-theme="indigo"
+                      style="background: #6366f1"
+                      title="Indigo"
+                    ></div>
+                  </div>
+                </div>
 
-        <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+                <!-- <div class="theme-section">
+                                <div class="theme-section-title">Background Style</div>
+                                <div class="bg-options">
+                                    <div class="bg-option active" data-bg="default" style="background: #0f172a;" title="Default Dark"></div>
+                                    <div class="bg-option" data-bg="gradient1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" title="Purple Dream"></div>
+                                    <div class="bg-option" data-bg="gradient2" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" title="Pink Sunset"></div>
+                                    <div class="bg-option" data-bg="gradient3" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);" title="Ocean Blue"></div>
+                                    <div class="bg-option" data-bg="gradient4" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);" title="Fresh Mint"></div>
+                                    <div class="bg-option" data-bg="gradient5" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);" title="Warm Sunrise"></div>
+                                </div>
+                            </div> -->
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero" id="about">
+      <div class="hero-bg" id="heroBg"></div>
       <div class="hero-content">
-        <h1>Hi, I'm <span class="my-name">Abhishek Ojha</span></h1>
-        <div class="skills-container">
-          <span class="skill-badge">Full Stack Developer</span>
-          <span class="skill-badge">Creative Problem Solver</span>
-          <span class="skill-badge">MERN Stack Developer</span>
-          <span class="skill-badge">Node.js Developer</span>
-          <span class="skill-badge">Django Developer</span>
+        <div class="hero-tag">👋 Hello, I'm</div>
+        <h1>Abhishek Ojha</h1>
+        <div class="hero-subtitle">
+          Full Stack Developer | Node.js Specialist
         </div>
-        <a href="#projects" class="cta-button">View My Work</a>
+        <p class="hero-description">
+          I craft scalable web applications and robust backend systems that
+          solve real business problems. With 2+ years of experience in the MERN
+          stack, I specialize in building high-performance APIs, architecting
+          multi-tenant systems, and automating workflows that save thousands of
+          hours.
+        </p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#" class="btn btn-secondary" id="downloadResume">
+            📄 Download Resume
+          </a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            I'm a passionate developer with expertise in building modern web
-            applications. I love turning complex problems into simple,
-            beautiful, and intuitive solutions.
-          </p>
-          <p>
-            With a strong foundation in both frontend and backend technologies,
-            I create seamless digital experiences that users love.
-          </p>
-          <div class="skills">
-            <span class="skill-tag">HTML & CSS</span>
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">2+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">APIs Built</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">150K+</div>
+          <div class="stat-label">Records Processed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">65%</div>
+          <div class="stat-label">Efficiency Gains</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-tag">What I Do</div>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="section-description">
+          A comprehensive toolkit for building modern, scalable web applications
+        </p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⚛️</div>
+          <h3>Frontend Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
             <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Git</span>
+            <span class="skill-tag">HTML5/CSS3</span>
           </div>
         </div>
-        <div class="about-image">
-          <div class="project-image">👨‍💻</div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🚀</div>
+          <h3>Backend Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">RESTful APIs</span>
+            <span class="skill-tag">WebSocket</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">💾</div>
+          <h3>Database & Storage</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Optimization</span>
+            <span class="skill-tag">Indexing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <h3>DevOps & Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">PM2</span>
+            <span class="skill-tag">Ubuntu</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🧪</div>
+          <h3>Testing & Quality</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Mocha</span>
+            <span class="skill-tag">Unit Testing</span>
+            <span class="skill-tag">TDD</span>
+            <span class="skill-tag">Integration Tests</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>Data & Automation</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Puppeteer</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">PDF Generation</span>
+            <span class="skill-tag">Excel Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-tag">Career Journey</div>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-description">
+          Building impactful solutions across diverse industries
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">
+                  Software Development Engineer - 1
+                </h3>
+                <div class="experience-company">
+                  Codezen Tech Solutions, Andheri
+                </div>
+              </div>
+              <div class="experience-date">Oct 2024 - Jan 2026</div>
+            </div>
+            <ul>
+              <li>
+                Maintained 30+ REST APIs handling 25+ document types with 99.9%
+                uptime and sub-200ms response times
+              </li>
+              <li>
+                Built automated report generation system reducing manual work by
+                30% using Puppeteer and PDF-lib
+              </li>
+              <li>
+                Processed 150K+ rows per execution, generating 12 monthly
+                reports and saving 25 hours/month
+              </li>
+              <li>
+                Improved system reliability by 30% through error pattern
+                analysis and Winston logging
+              </li>
+              <li>
+                Deployed multiple Node.js apps on Ubuntu servers using PM2 with
+                zero-downtime deployments
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">Backend Developer (Node.js)</h3>
+                <div class="experience-company">
+                  Terado Engineering Pvt Ltd, Virar
+                </div>
+              </div>
+              <div class="experience-date">May 2024 - Jul 2024</div>
+            </div>
+            <ul>
+              <li>
+                Designed admission management platform handling 500+
+                applications with dynamic multi-step forms
+              </li>
+              <li>
+                Built modular RESTful API architecture with clear separation of
+                concerns across 6 domain modules
+              </li>
+              <li>
+                Implemented centralized error handling framework reducing
+                debugging time by 50%
+              </li>
+              <li>
+                Architected scalable routing system with dynamic versioned API
+                loading
+              </li>
+              <li>
+                Reduced institutional setup time from 4 days to 2 days (50%
+                improvement)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="experience-header">
+              <div>
+                <h3 class="experience-title">Associate Software Engineer</h3>
+                <div class="experience-company">VirarHub Incubators, Virar</div>
+              </div>
+              <div class="experience-date">Sep 2023 - Mar 2024</div>
+            </div>
+            <ul>
+              <li>
+                Developed Next.js applications with SSR achieving 90+ Lighthouse
+                performance scores
+              </li>
+              <li>
+                Built reusable component library reducing development time by
+                50%
+              </li>
+              <li>
+                Integrated headless CMS reducing content deployment from 2 days
+                to 10 minutes
+              </li>
+              <li>
+                Achieved 95% cross-browser compatibility with mobile-first
+                responsive design
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <h2>Featured Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="project-image">🚀</div>
-          <div class="project-info">
-            <h3>Project One</h3>
-            <p>
-              A modern web application built with cutting-edge technologies.
-              Features include responsive design and smooth animations.
-            </p>
-          </div>
-        </div>
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-tag">Featured Work</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-description">
+          Real-world applications showcasing technical expertise and
+          problem-solving
+        </p>
+      </div>
+      <div class="projects-grid">
         <div class="project-card">
           <div class="project-image">💼</div>
-          <div class="project-info">
-            <h3>Project Two</h3>
-            <p>
-              An innovative solution for business management with intuitive UI
-              and powerful backend capabilities.
+          <div class="project-content">
+            <h3 class="project-title">Multi-tenant SaaS Platform</h3>
+            <p class="project-description">
+              Enterprise-grade expense management system with 99.9% data
+              isolation, supporting unlimited company instances with RBAC and
+              automated workflows.
             </p>
+            <div class="project-tech">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Cloudinary</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/abhitech2002/expense-management-saas"
+                class="project-link"
+                target="_blank"
+              >
+                View Code →
+              </a>
+            </div>
           </div>
         </div>
+
         <div class="project-card">
-          <div class="project-image">🎨</div>
-          <div class="project-info">
-            <h3>Project Three</h3>
-            <p>
-              Creative portfolio showcasing design skills with interactive
-              elements and beautiful visual effects.
+          <div class="project-image">📚</div>
+          <div class="project-content">
+            <h3 class="project-title">Admission Management System</h3>
+            <p class="project-description">
+              Comprehensive platform handling 500+ student applications with
+              dynamic forms, academic year management, and customizable workflow
+              configuration.
             </p>
+            <div class="project-tech">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">Winston</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">📊</div>
+          <div class="project-content">
+            <h3 class="project-title">Automated Reporting Pipeline</h3>
+            <p class="project-description">
+              Excel reporting system processing 150K+ rows, generating 12
+              monthly reports with Pandas/NumPy, reducing reconciliation time by
+              65% and saving 25 hours/month.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Automation</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <div class="section-header">
+        <div class="section-tag">Latest Insights</div>
+        <h2 class="section-title">Blog</h2>
+        <p class="section-description">
+          Thoughts on development, best practices, and lessons learned
+        </p>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-image">🏗️</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>📅 Dec 15, 2025</span>
+              <span>⏱️ 5 min read</span>
+            </div>
+            <h3 class="blog-title">
+              Building Scalable Multi-tenant SaaS Architecture
+            </h3>
+            <p class="blog-excerpt">
+              Deep dive into designing tenant isolation strategies, database
+              schema patterns, and middleware implementation for enterprise SaaS
+              applications.
+            </p>
+            <a href="#" class="blog-link">Read More →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-image">⚡</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>📅 Nov 28, 2025</span>
+              <span>⏱️ 7 min read</span>
+            </div>
+            <h3 class="blog-title">
+              Optimizing MongoDB Queries for High-Traffic Applications
+            </h3>
+            <p class="blog-excerpt">
+              Learn indexing strategies, aggregation pipeline optimization, and
+              query performance tuning techniques that reduced our API response
+              time by 65%.
+            </p>
+            <a href="#" class="blog-link">Read More →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-image">🤖</div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>📅 Nov 10, 2025</span>
+              <span>⏱️ 6 min read</span>
+            </div>
+            <h3 class="blog-title">
+              Automating Reports with Puppeteer and Pandas
+            </h3>
+            <p class="blog-excerpt">
+              How we automated 150K+ row data processing and PDF generation,
+              saving 25 hours per month and eliminating manual reporting errors.
+            </p>
+            <a href="#" class="blog-link">Read More →</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <h2>Let's Work Together</h2>
-      <p>
-        I'm always open to discussing new projects, creative ideas, or
-        opportunities to be part of your vision.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:your.email@example.com" class="contact-link"
-          >Email Me</a
-        >
-        <a href="https://github.com/yourusername" class="contact-link"
-          >GitHub</a
-        >
-        <a href="https://linkedin.com/in/yourprofile" class="contact-link"
-          >LinkedIn</a
-        >
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <div class="contact-content">
+          <div class="section-tag">Let's Connect</div>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Have a project in mind or want to discuss opportunities? Drop me a
+            message!
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your.email@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="What's this about?"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell me about your project or inquiry..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Message</button>
+
+          <div class="form-message" id="formMessage"></div>
+        </form>
+
+        <div class="contact-links">
+          <a href="mailto:abhitech.work@gmail.com" class="contact-link">
+            <div class="contact-icon">✉️</div>
+            <span>Email</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/abhishek-ojha-a12975209"
+            target="_blank"
+            class="contact-link"
+          >
+            <div class="contact-icon">💼</div>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/abhitech2002"
+            target="_blank"
+            class="contact-link"
+          >
+            <div class="contact-icon">💻</div>
+            <span>GitHub</span>
+          </a>
+          <a href="tel:+919324233627" class="contact-link">
+            <div class="contact-icon">📱</div>
+            <span>Phone</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Your Name. All rights reserved.</p>
+      <p>&copy; 2026 Abhishek Ojha. Built with passion and clean code.</p>
+      <p style="margin-top: 0.5rem; color: #64748b">
+        Full Stack Developer | Node.js Specialist | Problem Solver
+      </p>
     </footer>
 
     <script src="script.js"></script>
