@@ -152,3 +152,54 @@ document.getElementById("mobileMenuBtn").addEventListener("click", () => {
         nav.style.padding = "2rem";
     }
 });
+
+// --- Modern interaction handlers ---
+
+// CTA ripple effect + gentle pulse on desktop
+document.querySelectorAll('.btn-cta').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        const rect = btn.getBoundingClientRect();
+        const ripple = btn.querySelector('.ripple');
+        const size = Math.max(rect.width, rect.height) * 1.2;
+        ripple.style.width = ripple.style.height = size + 'px';
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.style.transform = 'scale(1)';
+        ripple.style.opacity = '1';
+        setTimeout(() => { ripple.style.transform = 'scale(0)'; ripple.style.opacity = '0'; }, 600);
+    });
+
+    if (!('ontouchstart' in window)) {
+        btn.classList.add('pulse');
+        setTimeout(() => btn.classList.remove('pulse'), 6000);
+    }
+});
+
+// Decorative SVG path draw when hero enters viewport
+const heroDecor = document.querySelector('.decor-path');
+if (heroDecor) {
+    const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroDecor.classList.add('draw');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.25 });
+
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) io.observe(heroSection);
+}
+
+// Spinner demo: clicking a project card briefly shows a spinner
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        const icon = card.querySelector('.project-image');
+        if (!icon) return;
+        const original = icon.innerHTML;
+        icon.innerHTML = '<span class="spinner"></span>';
+        setTimeout(() => icon.innerHTML = original, 900);
+    });
+});
